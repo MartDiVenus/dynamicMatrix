@@ -8,7 +8,7 @@ If the author of lsblk changes the number of 'SIZE' column, you  don't  need
 to know its new column number  to print its values: you'll always print them
 only executing pbdm code.
 
-	Rotating the matrix, you can use pbdm for rows too.
+Rotating the matrix, you can use pbdm for rows too.
 
 
 # Copyright
