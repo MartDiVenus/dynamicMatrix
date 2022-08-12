@@ -35,6 +35,8 @@ Aka see <https://www.gnu.org/licenses/>.
 # Use
 e.g. lsblk matrix
 
+:~$ tar xvf dynamicMatrix-(version)
+
 :~$ chmod -R uga+xrw dynamicMatrix-(version)
 
 :~$ cd dynamicMatrix-(version)
