@@ -4,7 +4,7 @@ Pure Bash Dynamic Matrix (pbdm)
 # Purpose
 Make a matrix adaptive.
 pbdm code is based on lsblk example.
-If the author of lsblk changes the number of column <<SIZE>>, you don't need 
+If the author of lsblk changes the number of column 'SIZE', you don't need 
 to know its new column number  to print its values: you'll always print them
 only executing pbdm code.
 	Rotating the matrix, you can use pbdm for rows too.
