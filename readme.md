@@ -34,9 +34,9 @@ Aka see <https://www.gnu.org/licenses/>.
 # Use
 e.g. lsblk matrix
 
-:~$ chmod -R uga+xrw dynamicMatrix
+:~$ chmod -R uga+xrw dynamicMatrix-(number of version)
 
-:~$ cd dynamicMatrix
+:~$ cd dynamicMatrix-(number of version)
 
 :~$ ./pre1.sh
 
