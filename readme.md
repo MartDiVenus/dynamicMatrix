@@ -34,7 +34,7 @@ In the external software code:
 3.2. You have to write the name of the matrix column (field), for which you want  to print 
 values, like /tmp/dynamicMatrix-externalKey.
 
-3.3. You have to invoke pbdm by the external software code:
+3.3. You have to invoke pbdm:
 
 cd (pbdm folder path)/external
 
