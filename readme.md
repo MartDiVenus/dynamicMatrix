@@ -35,7 +35,9 @@ In the external software code:
 values, like /tmp/dynamicMatrix-externalKey.
 
 3.3. You have to invoke pbdm fron the external software code:
+
 cd (pbdm folder path)/external
+
 ./pre1.sh
 
 
