@@ -10,9 +10,9 @@ Make a matrix adaptive.
 	1. lsblk example choice
 
 For this choice, pbdm code is based on lsblk example.
-If the author of lsblk changes the number of 'SIZE' column, you'll not  need 
-to know its new column number  to print its values: you'll always print them
-only executing pbdm code.
+e.g. If the author of lsblk changes the number of 'SIZE' column,  you'll not
+need to know its new column number  to print its values: you'll always print
+them only executing pbdm code.
 
 
 	2. upload choice
