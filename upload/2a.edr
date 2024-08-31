@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+
+head -1 /tmp/dynamicMatrix-outputUploadMatrix > /tmp/dynamicMatrix-outputUploadMatrixHeaded
+
+vim -c ":s/ /\//g" /tmp/dynamicMatrix-outputUploadMatrixHeaded -c :w -c :q
+
+sed 's/[^/]//g' /tmp/dynamicMatrix-outputUploadMatrixHeaded | awk '{ print length }' > /tmp/dynamicMatrix-colC
+
+numberOfColumn=$(cat /tmp/dynamicMatrix-colC)
+
+
+
+if [ -d /tmp/dynamicMatrix-times ]; then
+    rm -r /tmp/dynamicMatrix-times
+    mkdir /tmp/dynamicMatrix-times
+   else
+    mkdir /tmp/dynamicMatrix-times
+fi
+
+
+declare -i var=0
+
+while ((k++ <$numberOfColumn))
+  do
+  var=$var+1
+  echo "I$var" > /tmp/dynamicMatrix-times/$var.txt
+done  
+
+
+paste /tmp/dynamicMatrix-times/* > /tmp/dynamicMatrix-stringaRead
+
+
+leggoStringaRead=$(cat /tmp/dynamicMatrix-stringaRead)
+

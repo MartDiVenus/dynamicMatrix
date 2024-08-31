@@ -1,0 +1,49 @@
+
+ls -l /tmp/dynamicMatrix-times > /tmp/dynamicMatrix-numberOfFiles
+
+linestocut=$(wc -l /tmp/dynamicMatrix-numberOfFiles)
+
+echo "$linestocut" > /tmp/dynamicMatrix-linescutting
+
+cat /tmp/dynamicMatrix-linescutting | awk '$1 > 0 {print $1}' > /tmp/dynamicMatrix-numberoflines
+
+numberoflinesexpr="$(cat /tmp/dynamicMatrix-numberoflines)"
+
+numberofLineNette=$((numberoflinesexpr - 1))
+
+## << Linee nette >> in italiano, LineNette (licenza artistica)
+
+## Scrivo fuori, ossia in 4.edr, parte del ciclo che annido nel primo
+## altrimenti il secondo non leggerebbe nello stesso processo
+## la variabile $I$n che fisso automaticamente. 
+
+n=1
+while read $leggoStringaRead
+     do
+      while [ $n -le $numberofLineNette ]
+       do
+       echo "
+       if test \$I$n == $chiave
+         then
+         while read $leggoStringaRead
+           do
+           echo "\$I$n"
+           done < /tmp/dynamicMatrix-outputUploadMatrix >> /tmp/dynamicMatrix-out 
+       fi
+
+" 
+n=$((n+1))
+ done
+done < /tmp/dynamicMatrix-outputUploadMatrix >> 4.edr
+
+
+cat 3.edr 4.edr > 5.edr
+
+cat 5.edr 6.edr > 7.sh
+
+chmod ug+xr 7.sh
+
+./7.sh
+
+exit
+

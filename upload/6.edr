@@ -1,0 +1,11 @@
+n=$((n+1))
+ done
+done < /tmp/dynamicMatrix-outputUploadMatrix >> /tmp/dynamicMatrix-out
+
+
+cat /tmp/dynamicMatrix-out
+
+echo " "
+echo "You have the output above in /tmp/dynamicMatrix-out too."
+
+exit

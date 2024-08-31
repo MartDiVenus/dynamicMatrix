@@ -1,0 +1,61 @@
+#!/bin/bash
+
+
+
+lsblk > /tmp/dynamicMatrix-outputLsblk
+
+head -1 /tmp/dynamicMatrix-outputLsblk > /tmp/dynamicMatrix-outputLsblkHeaded
+
+vim -c ":s/ /\//g" /tmp/dynamicMatrix-outputLsblkHeaded -c :w -c :q
+
+sed 's/[^/]//g' /tmp/dynamicMatrix-outputLsblkHeaded | awk '{ print length }' > /tmp/dynamicMatrix-colC
+
+numberOfColumn=$(cat /tmp/dynamicMatrix-colC)
+
+
+if [ -d /tmp/dynamicMatrix-times ]; then
+    rm -r /tmp/dynamicMatrix-times
+    mkdir /tmp/dynamicMatrix-times
+   else
+    mkdir /tmp/dynamicMatrix-times
+fi
+
+
+declare -i var=0
+
+while ((k++ <$numberOfColumn))
+  do
+  var=$var+1
+  echo "I$var" > /tmp/dynamicMatrix-times/$var.txt
+done  
+
+
+paste /tmp/dynamicMatrix-times/* > /tmp/dynamicMatrix-stringaRead
+
+
+leggoStringaRead=$(cat /tmp/dynamicMatrix-stringaRead)
+
+
+
+ls -l /tmp/dynamicMatrix-times > /tmp/dynamicMatrix-numberOfFiles
+
+
+
+linestocut=$(wc -l /tmp/dynamicMatrix-numberOfFiles)
+
+echo "$linestocut" > /tmp/dynamicMatrix-linescutting
+
+cat /tmp/dynamicMatrix-linescutting | awk '$1 > 0 {print $1}' > /tmp/dynamicMatrix-numberoflines
+
+numberoflinesexpr="$(cat /tmp/dynamicMatrix-numberoflines)"
+
+
+numberofLineNette=$((numberoflinesexpr - 1))
+
+
+
+n=1
+while read $leggoStringaRead
+     do
+      while [ $n -le $numberofLineNette ]
+       do
