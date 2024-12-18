@@ -5,7 +5,7 @@
 ### Purpose: Make a matrix adaptive
 
 ### Copyright:
-## Mario Fantini marfant7@gmail.com
+## Mario Fantini ing.mariofantini@gmail.com
 ## Copyright (C) 2022.08.12
 ## https://martlux.ns0.it:4000/cluster/math/dynamicMatrix
 

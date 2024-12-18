@@ -61,7 +61,7 @@ Rotating the matrix, you can use pbdm for rows too.
 
 
 # Copyright
-Mario Fantini marfant7@gmail.com
+Mario Fantini ing.mariofantini@gmail.com
 Copyright (C) 2022.08.12
 https://martlux.ns0.it:4000/cluster/math/dynamicMatrix
 
